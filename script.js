@@ -57,7 +57,7 @@ var updateVisual = function(visData){
   evictions.enter()
     .append('circle')
     .transition()
-    .duration(500)
+    .duration(200)
       .attr('cx',function(d){return d.x})
       .attr('cy',function(d){return d.y})
       .attr('r', 3);
@@ -66,8 +66,8 @@ var updateVisual = function(visData){
   evictions.exit()
     .transition()
     .duration(100)
-      .attr('opacity',0);
-      .attr('r',10);
+      .attr('opacity',0)
+      .attr('r',10)
     .remove();
 
 }
@@ -76,23 +76,22 @@ var updateVisual = function(visData){
 
 //Initialization-------------------------------------------------
 //create canvas
-var width = 800;
-var height = 600;
+//var width = 800;
+//var height = 600;
 
-var svg = d3.select("body")
-  .append("svg")
-    .attr("width", width)
-    .attr("height", height);
 
 //more stuff from sfPath.js
 var visualData = [];
 updateVisual(visualData);
 
+//median household income for that year in san francisco should display as well
+
 
 
 //LOOPING-------------------------------------------------
 //these will all be forms, so we'll need to grab these values
-var start = d3.select('#startDate')  !!!!!!!!!!!!
+var start = d3.select('#startDate').attr('value');
+console.log(start);
 var speed = d3.select('#speed') 
 var evictionType = d3.select('#type');
 

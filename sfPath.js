@@ -342,12 +342,11 @@ $(document).ready(function() {
   projection.scale(scale).translate(transl);
 
   svg.selectAll("path").data(data.features).enter().append("path").attr("d", path).attr('data-id', function(d) {
-    return d.id;
+    return d.name;
   }).attr('data-name', function(d) {
     return d.properties.name;
-  }).style("fill", "#FB5B1F").style("stroke", "#ffffff");
+  }).attr('class','path')
 
-  $('svg path').hover(function() {
-    $("#details").text($(this).data("id") + " : " + $(this).data("name"));
-  });
+
+  
 });

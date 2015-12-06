@@ -2,16 +2,40 @@
 <html>
 <head>
   <title>Eviction Notice</title>
-  <script type="d3.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="d3.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
   <div class='container'>
     <span id='currentDate'>Date</span>
 
     <div class='settings'>
-      <form type= id='startDate'>Start Date</span>
-      <span id='typeOfEviction'>Type of Eviction</span>
-      <span id='speed'>Date</span>
+      <h2>Start Year</h2>
+      <select name="startYear" id='startYear'>
+        <option value="1997">1997</option>
+        <option value="1998">1998</option>
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+        <option value="2001">2001</option>
+        <option value="2002">2002</option>
+        <option value="2003">2003</option>
+        <option value="2004">2004</option>
+        <option value="2005">2005</option>
+        <option value="2006">2006</option>
+        <option value="2007">2007</option>
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+      </select>
+
+      <h2 id='typeOfEviction'>Type of Eviction</h2>
+      <h2 id='speed'>Date</h2>
     </div>
 
     
@@ -19,5 +43,6 @@
 
   <script src="data.js"></script>
   <script src="script.js"></script>
+  <script src="sfPath.js"></script>
 </body>
 </html>
