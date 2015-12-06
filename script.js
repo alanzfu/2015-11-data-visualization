@@ -41,6 +41,8 @@ for(var i = 0; i < data.length; i++){
 }
 
 
+//d3 Update Functions ------------------------------------------------------------
+
 //create canvas
 
 //Update FN for objects added to canvas
@@ -51,15 +53,22 @@ var updateVisual = function(visData){
       return d.id
     })
 
-  //Update
-
   //Enter
-  var evictions
-
-  //Enter/Update
-
+  evictions.enter()
+    .append('circle')
+    .transition()
+    .duration(500)
+      .attr('cx',function(d){return d.x})
+      .attr('cy',function(d){return d.y})
+      .attr('r', 3);
 
   //Exit
+  evictions.exit()
+    .transition()
+    .duration(100)
+      .attr('opacity',0);
+      .attr('r',10);
+    .remove();
 
 }
 
@@ -76,10 +85,16 @@ var svg = d3.select("body")
     .attr("height", height);
 
 //more stuff from sfPath.js
-
-
 var visualData = [];
 updateVisual(visualData);
+
+
+
+//LOOPING-------------------------------------------------
+//these will all be forms, so we'll need to grab these values
+var start = d3.select('#startDate')  !!!!!!!!!!!!
+var speed = d3.select('#speed') 
+var evictionType = d3.select('#type');
 
 //d3 start, speed, type
   //datestring = 1997
