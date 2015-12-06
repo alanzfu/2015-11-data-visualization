@@ -34,7 +34,7 @@ for(var i = 0; i < data.length; i++){
   var datum = data[i];
   //update x and y
 
-
+  data[i].zip = datum[12];
   data[i].neighborhood = datum[36];
   data[i].date = datum[13];
   data[i].id = datum[1];
