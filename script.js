@@ -97,19 +97,18 @@ var evictionType = d3.select('#type');
 
 //d3 start, speed, type
   //datestring = 1997
+var dateString = '1997-10-5'
 
 setInterval(function(){
-  //increment the currentDate
-  //change the date on the DOM
-    //.text
-  //overwrite visual data with []
-  //while(last datum.date === currentDate)
-    //pop if off data
-    //if(matches type)
-      //push onto visualData
-  //updateVisual(visualData);
-
-
+  visualData = [];
+  if(data[data.length-1].date === mostrecentdate){
+    visualData.push(data.pop());
+  }
+  else {
+    increment the dateString
+    change the date string on the DOM
+  }
+  updateVisual(visualData);
 }, 100);
 
 
